@@ -1,5 +1,8 @@
 #include<stdio.h>
-/*function main is the entry point for a program*/
+/**
+* main - A program that prints a line with puts
+* Return: 0 (success)
+*/
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
