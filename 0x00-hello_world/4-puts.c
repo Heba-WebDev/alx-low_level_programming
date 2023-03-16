@@ -1,5 +1,5 @@
 #include<stdio.h>
-/*main function prints with puts method*/
+/*function main is the entry point for a program*/
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
