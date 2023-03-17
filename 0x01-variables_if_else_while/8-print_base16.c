@@ -10,9 +10,9 @@ for (number = 0; number <= 9; number++)
 {
 putchar(number + 48);
 }
-for (number = 0; number < 7; number++)
+for (number = 0; number < 6; number++)
 {
-putchar(number + 97)
+putchar(number + 97);
 }
 putchar('\n');
 return (0);
