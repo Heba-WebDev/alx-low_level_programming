@@ -3,8 +3,8 @@
 #include<stdio.h>
 /**
 * main - A program that prints a random number
-* return: 0 (success)
-**/
+* Return: 0 (success)
+*/
 int main(void)
 {
 int n;
