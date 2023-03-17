@@ -6,13 +6,18 @@
 int main(void)
 {
 int digit;
-for (digit = 0; digit <= 9; digit++)
+for (digit = 48; digit <= 57; digit++)
 {
-putchar(digit + 48);
-if (digit == 9)
+putchar(digit);
+if (digit == 57)
+{
 continue;
+}
+else 
+{
 putchar(',');
 putchar(' ');
+}
 }
 return (0);
 }
