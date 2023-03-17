@@ -5,10 +5,10 @@
 */
 int main(void)
 {
-int digit;
-for (digit = 48; digit <= 57; digit++)
+int number;
+for (number = 0; number <= 9; number++)
 {
-putchar(digit);
+putchar(number + 48);
 }
 putchar("\n");
 return (0);
