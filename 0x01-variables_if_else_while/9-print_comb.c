@@ -6,12 +6,14 @@
 int main(void)
 {
 int digit;
-for (digit = 0; digit <= 8; digit++)
+for (digit = 0; digit <= 9; digit++)
 {
 putchar(digit + 48);
+if(digit != 9)
+{
 putchar(',');
 putchar(' ');
 }
-putchar(57);
+}
 return (0);
 }
