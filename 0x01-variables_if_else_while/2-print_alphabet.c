@@ -1,9 +1,9 @@
 #include<stdlib.h>
 #include<time.h>
 #include<stdio.h>
-/*
- * main - function to print all alphabets 
- * return: 0 (sucess)
+/**
+* main - A program that prints all letters lower cased
+* Return: 0 (success)
 */
 int main(void)
 {
