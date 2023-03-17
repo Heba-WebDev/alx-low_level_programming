@@ -1,10 +1,10 @@
-#include<stdio.h>
-#include<time.h>
 #include<stdlib.h>
-/*Documentaion 
- * main - a program that prints the last digit of a number
- * return: 0 (success)
- **/
+#include<time.h>
+#include<stdio.h>
+/**
+* main - A program that prints a random number and its last digit
+* Return: 0 (success)
+*/
 int main(void)
 {
 int n;
