@@ -9,11 +9,10 @@ int digit;
 for (digit = 0; digit <= 9; digit++)
 {
 putchar(digit + 48);
-if (digit != 9)
-{
+if (digit == 9)
+continue;
 putchar(',');
 putchar(' ');
-}
 }
 return (0);
 }
