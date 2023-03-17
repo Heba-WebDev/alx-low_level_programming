@@ -12,6 +12,6 @@ putchar(digit + 48);
 putchar(',');
 putchar(' ');
 }
-putchar('57');
+putchar(57);
 return (0);
 }
