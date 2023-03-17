@@ -1,5 +1,6 @@
 #include<stdlib.h>
 #include<time.h>
+#include<stdio.h>
 /**
 * main - A program that prints a random number
 * Return: 0 (success)
