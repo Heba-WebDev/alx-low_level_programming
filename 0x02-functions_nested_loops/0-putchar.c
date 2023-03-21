@@ -1,7 +1,7 @@
 #include "main.h"
 /**
 * main - A program that prints a word
-* Return: 1 (success)
+* Return: 0 (success)
 */
 int main(void)
 {
@@ -14,5 +14,5 @@ _putchar('h');
 _putchar('a');
 _putchar('r');
 _putchar('\n');
-return (1);
+return (0);
 }
