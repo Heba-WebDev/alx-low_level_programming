@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isalpha - prints the sign of the number
+ * print_sign - prints the sign of the number
  * @n: parameter to be printed
  * Return: 0 (if n == 0) 1 (if n > 0) -1 (otherwise)
  */
