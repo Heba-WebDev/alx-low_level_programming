@@ -1,4 +1,4 @@
-#include<main.h>
+#include "main.h"
 /**
 * main - A program that prints a word
 * Return: 1 (success)
