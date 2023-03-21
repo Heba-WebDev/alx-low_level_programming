@@ -3,7 +3,7 @@
 * main - A program that prints all alphabets 
 * Return: 0 (success)
 */
-int main(void)
+void print_alphabet(void)
 {
 for(int i = 'a'; i <= 'z'; i++) {
 _putchar(i);
