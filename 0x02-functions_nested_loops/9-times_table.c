@@ -16,6 +16,7 @@ if (j < 9)
 {
 _putchar(multi);
 _putchar(' ');
+_putchar(' ');
 _putchar(',');
 }
 else
