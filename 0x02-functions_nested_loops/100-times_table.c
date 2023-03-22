@@ -23,13 +23,13 @@ if (n > 15 || n < 0) return;
 				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
-				_putchar(k + '0');
+				_putchar(k);
 			} else if (k >= n)
 			{
 				_putchar(',');
 				_putchar(' ');
-				_putchar((k / 10) + '0');
-				_putchar((k % 10) + '0');
+				_putchar((k / 10));
+				_putchar((k % 10));
 			}
 		}
 		_putchar('\n');
