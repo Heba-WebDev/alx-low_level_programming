@@ -2,7 +2,7 @@
 
 /**
 *print_square - prints the square # of a given number
-*@n: input of type int
+*@size: input of type int
 *
 *Return: void
 */
