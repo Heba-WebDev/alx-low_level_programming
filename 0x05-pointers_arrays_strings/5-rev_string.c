@@ -12,7 +12,7 @@ while (s[length])
 {
 length++;
 }
-for (i = 0; i < length/2; ++i)
+for (i = 0; i < length / 2; ++i)
 {
 char temp;
 temp = s[i];
