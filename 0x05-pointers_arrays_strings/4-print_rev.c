@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * rev_string - prints a string to stdout
+ * print_rev- prints a string to stdout
  * @s: pointer to the string to print
  */
-void rev_string(char *s)
+void print_rev(char *s)
 {
 int length;
 length = 0;
