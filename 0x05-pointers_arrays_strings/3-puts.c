@@ -2,16 +2,15 @@
 
 /**
  * _puts - prints a string
- * @str: an array of chars (string)
+ * @str: a pointer to an array of chars (string)
  */
 void _puts(char *str)
 {
 int length;
 length = 0;
-while (str[length] != '\0')
+for (length = 0; length != '\0'; i++)
 {
-_putchar(str[length]);
-length++;
+_putchar(str[i]);
 }
 _putchar('\n');
 }
