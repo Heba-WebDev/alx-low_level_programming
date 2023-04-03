@@ -8,7 +8,6 @@
  */
 char *_strchr(char *s, char c)
 {
-unsigned int length;
 while (*s)
 {
 if (*s != C)
