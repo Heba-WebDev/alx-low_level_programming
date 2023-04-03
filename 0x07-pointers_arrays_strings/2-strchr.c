@@ -8,20 +8,13 @@
  */
 char *_strchr(char *s, char c)
 {
-while (*s)
+while (*s != '\0')
 {
-if (*s != C)
+if (*s == c)
 {
+return (s);
+}
 s++;
-}
-else
-{
-return (s);
-}
-}
-if (c == '\0')
-{
-return (s);
 }
 return (NULL);
 }
