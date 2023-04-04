@@ -2,10 +2,10 @@
 #include <stddef.h>
 
 /**
- * _strchr - locates a character in a string.
- * @s: the string to locate c from.
- * @c: the character to locate in s.
- * Return: a pointer to c in the string s, or NULL if not found.
+ * _strchr - a function that locates a character in a string
+ * @s: the string 
+ * @c: the character to locate in the string
+ * Return: a pointer to c or NULL if c is not found
  */
 char *_strchr(char *s, char c)
 {
@@ -20,5 +20,5 @@ else
 s++;
 }
 }
-return (NULL);
+return (0);
 }
