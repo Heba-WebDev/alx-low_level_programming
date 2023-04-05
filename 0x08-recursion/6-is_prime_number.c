@@ -1,6 +1,6 @@
 #include "main.h"
 
-int _sqrt(int n, int i);
+int prime(int n, int i);
 
 /**
  * is_prime_number - returns 1 for a prime number, otherwise 0
@@ -21,10 +21,10 @@ return (prime(n, 2));
 }
 
 /**
- * _sqrt - finds the squre root
- * @n: the integer to get its square root
+ * prime - finds if a numner is a prime or not
+ * @n: the integer to examine
  * @i: counter
- * Return: the square root
+ * Return: 1 for pirme numbers and 0 otherwise
  */
 int prime(int n, int i)
 {
