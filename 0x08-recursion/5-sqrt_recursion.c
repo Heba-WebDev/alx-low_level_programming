@@ -17,7 +17,7 @@ return (_sqrt(n, 0));
 }
 
 /**
- * sqrt - finds the squre root
+ * _sqrt - finds the squre root
  * @n: the integer to get its square root
  * @i: counter
  * Return: the square root
