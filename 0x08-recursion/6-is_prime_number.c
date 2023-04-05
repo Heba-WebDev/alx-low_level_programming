@@ -28,13 +28,13 @@ return (prime(n, 2));
  */
 int prime(int n, int i)
 {
-if (n % i == 0)
+if (i == n)
+{
+return (1);
+}
+else if (n % i == 0)
 {
 return (-1);
 }
-while (i < n)
-{
 return (prime(n, i + 1));
-}
-return (-1);
 }
