@@ -2,21 +2,27 @@
 /**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: an integer
- * @i: an integer
  * Return: the square root of n
  */
-int _sqrt_recursion(int n, int i)
+int _sqrt_recursion(int n)
 {
-if (i * i == n)
-{
-return (i);
-}
-else if (i > (n / 2))
+if (n < 0)
 {
 return (-1);
 }
-else
-{
-return (_sqrt_recursion(n, i + 1));
+return (sqrt(n, 1));
 }
+
+
+int sqrt(int n, int i)
+{
+if (i * i > n/2)
+{
+return (-1);
+}
+else if (i * n == i)
+{
+return (i);
+}
+return (sqrt(n, i + 1));
 }
