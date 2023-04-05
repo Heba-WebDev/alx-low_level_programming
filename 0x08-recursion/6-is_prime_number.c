@@ -4,8 +4,8 @@ int prime(int n, int i);
 
 /**
  * is_prime_number - returns 1 for a prime number, otherwise 0
- * @n: an integer 
- * Return: 1 or 0
+ * @n: an integer
+ * Return: 1 for prime numbers and 0 otherwise
  */
 int is_prime_number(int n)
 {
@@ -22,9 +22,9 @@ return (prime(n, 2));
 
 /**
  * prime - finds if a numner is a prime or not
- * @n: the integer to examine
+ * @n: an integer 
  * @i: counter
- * Return: 1 for pirme numbers and 0 otherwise
+ * Return: 1 for prime numbers and 0 otherwise
  */
 int prime(int n, int i)
 {
