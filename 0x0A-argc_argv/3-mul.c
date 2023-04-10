@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
-* main - multiplies two numbers
-* @argc: arguments count
-* @argv: arguments
-* Return: (0)
-*/
+ * main - multiplies two numbers
+ * @argc: number of arguments
+ * @argv: the arguments 
+ * Return: (0)
+ */
 int main(int argc, char **argv)
 {
 int i;
-if ( argc <= 2)
+if (argc != 3)
 {
-printf("Error\n");
+printf("%s\n", "Error");
 return (1);
 }
 else
