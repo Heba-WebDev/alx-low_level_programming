@@ -2,14 +2,15 @@
 #include <stdlib.h>
 
 /**
- * main - multiplies two numbers
- * @argc: number of arguments
- * @argv: the arguments 
- * Return: (0)
+ * main - Entry point
+ *
+ * @argc: Counts the number of parameters that go into main
+ * @argv: Pointer of array of pointers containing strings entering main
+ * Return: Always 0 (Success)
  */
 int main(int argc, char **argv)
 {
-int i, ex;
+int n, ex;
 ex = 0;
 if (argc != 3)
 {
@@ -18,8 +19,8 @@ ex = 1;
 }
 else
 {
-i = atoi(argv[1]) * atoi(argv[2]);
-printf("%i\n", i);
+n = atoi(argv[1]) * atoi(argv[2]);
+printf("%i\n", n);
 }
 return (ex);
 }
