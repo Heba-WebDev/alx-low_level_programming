@@ -11,37 +11,30 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-unsigned int i, counter, size1, size2;
-counter = 0;
+unsigned int i, size;
 char *concatenated_str;
-if (s1 != NULL)
-{
-size1 = strlen(s1);
-}
-else
+if (s1 == NULL)
 {
 s1 = "";
 }
-if (s2 != NULL)
-{
-size2 = strlen(s2);
-}
-else
+if (s2 == NULL)
 {
 s2 = "";
 }
-concatenated_str = malloc((size1 + size2 + 1) * sizeof(char));
+size = strlen(s1) + strlen(s2);
+concatenated_str = malloc((size + 1) * sizeof(char));
 if (concatenated_str == NULL)
 {
 return (NULL);
 }
-for (i = 0; i < size1; i++)
+for (i = 0; s1[i] != '\0'; i++)
 {
-concatenated_str[counter] = s1[i];
+concatenated_str[i] += s1[i];
 }
-for (i = 0; i < size2; i++)
+for (i = 0; s2[i] != '\0'; i++)
 {
-concatenated_str[counter] = s2[i];
+concatenated_str[strlen(concatenated_str)] += s2[i];
 }
+concatenated_str[strlen(concatenated_str)] = '\0';
 return (concatenated_str);
 }
