@@ -27,7 +27,8 @@ for (i = 0; i < height; i++)
 array[i] = calloc(width, sizeof(int));
 if (array[i] == NULL)
 {
-while (--i >= 0) {
+while (--i >= 0)
+{
 free(array[i]);
 }
 free(array);
