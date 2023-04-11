@@ -11,29 +11,37 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-unsigned int i, j, size1, size2;
-j= 0;
+unsigned int i, counter, size1, size2;
+counter = 0;
 char *concatenatedStr;
 if (s1 != NULL)
 {
-s1 = strlen(s1);
+size1 = strlen(s1);
+}
+else
+{
+s1 = "";
 }
 if (s2 != NULL)
 {
-s2 = strlen(s2);
+size2 = strlen(s2);
+}
+else
+{
+s2 = "";
 }
 concatenatedStr = malloc((size1 + size2 + 1) * sizeof(char));
 if (concatenatedStr == NULL)
 {
 return (NULL);
 }
-if (s1 != NULL)
+for (i = 0; i < size1; i++)
 {
-strcpy(concatenatedStr, size1);
+concatenatedStr[counter] = s1[i];
 }
-if (s2 != NULL)
+for (i = 0; i < size2; i++)
 {
-strcpy(concatenatedStr + size1, size2);
+concatenatedStr[counter] = s2[i];
 }
 return (concatenatedStr);
 }
