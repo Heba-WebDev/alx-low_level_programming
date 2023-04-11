@@ -15,8 +15,8 @@ if (width <= 0 || height <= 0)
 {
 return (NULL);
 }
-int **array;
-int i, j;
+int** array;
+int i;
 array = malloc(height * sizeof(int));
 if (array == NULL)
 {
