@@ -18,7 +18,11 @@ return (NULL);
 }
 size = strlen(str) + 1;
 duplicate = malloc(size * sizeof(char));
-for (i = 0; i < size; i++)
+if (duplicate == NULL)
+{
+return (NULL);
+}
+for (i = 0; str[i]; i++)
 {
 duplicate[i] = str[i];
 }
