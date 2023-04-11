@@ -14,30 +14,26 @@ char *str_concat(char *s1, char *s2)
 unsigned int i, j, size1, size2;
 j= 0;
 char *concatenatedStr;
-if (s1 == NULL)
+if (s1 != NULL)
 {
-s1 = "";
+s1 = strlen(s1);
 }
-if (s2 == NULL)
+if (s2 != NULL)
 {
-s2 = "";
+s2 = strlen(s2);
 }
-size1 = strlen(s1);
-size2 = strlen(s2);
-concatenatedStr = malloc((size1 *sizeof(char)) + (size2 *sizeof(char)) + 1);
+concatenatedStr = malloc((size1 + size2 + 1) * sizeof(char));
 if (concatenatedStr == NULL)
 {
 return (NULL);
 }
-for (i = 0; s1[i]; i++)
+if (s1 != NULL)
 {
-concatenatedStr[j] = s1[i];
-j++;
+strcpy(concatenatedStr, size1);
 }
-for (i = 0; s2[i]; i++)
+if (s2 != NULL)
 {
-concatenatedStr[j] = s1[i];
-j++;
+strcpy(concatenatedStr + size1, size2);
 }
 return (concatenatedStr);
 }
