@@ -15,12 +15,24 @@ if (width <= 0 || height <= 0)
 {
 return (NULL);
 }
-int *array;
+int **array;
 int i, j;
-array = calloc((height * width), sizeof(int));
+array = malloc(height * sizeof(int));
 if (array == NULL)
 {
 return (NULL);
+}
+for (i = 0; i < height; i++)
+{
+array[i] = calloc(width, sizeof(int));
+if (array[i] == NULL)
+{
+while (--i >= 0) {
+free(array[i]);
+}
+free(array);
+return (NULL);
+}
 }
 return (array);
 }
