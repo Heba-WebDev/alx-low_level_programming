@@ -17,7 +17,7 @@ if (str == NULL)
 return (NULL);
 }
 size = strlen(str) + 1;
-duplicate = malloc(size * sizeof(char));
+duplicate = malloc(size *sizeof(char));
 if (duplicate == NULL)
 {
 return (NULL);
