@@ -17,13 +17,10 @@ return (NULL);
 }
 int *array;
 int i, j;
-array = malloc(sizeof(int) * (height * width));
-for (i = 0; i < array; i++)
+array = calloc((height * width), sizeof(int));
+if (array == NULL)
 {
-for (j = 0; j < array; j++)
-{
-array[i][j] = 0;
-}
+return (NULL);
 }
 return (array);
 }
