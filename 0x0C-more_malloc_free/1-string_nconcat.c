@@ -12,7 +12,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 char *concatenated;
-int len, i;
+int i;
 if (s1 == NULL)
 {
 s1 = "";
@@ -21,21 +21,23 @@ if (s2 == NULL)
 {
 s2 = "";
 }
-len = strlen(s1);
-concatenated = malloc(sizeof(char) * (len + 1));
+concatenated = malloc(sizeof(char) * (strlen(s1) + n + 1));
 if (concatenated == NULL)
 {
 return (NULL);
 }
-len = 0;
-for (i = 0; s1[i]; i++)
+strcpy(concatenated, s1);
+if (n >= strlen(s2))
 {
-concatenated[len++] = s1[i];
+n = strlen(s2);
+strcpy(concatenated + strlen(s1), s2);
 }
-for (i = 0; s2[i] && i < n; i++)
+else
 {
-concatenated[len++] = s2[i];
+for (i = 0; i < n; i++)
+{
+concatenated += s2[i];
 }
-concatenated[len] = '\0';
+}
 return (concatenated);
 }
