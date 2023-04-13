@@ -15,10 +15,10 @@ if (size == 0 || nmemb == 0)
 {
 return (NULL);
 }
-array = (int*)calloc(size, sizeof(int));
-if (array == NULL)
+array = malloc(nmemb * size);
+if (array != NULL)
 {
-return (NULL);
+memset(array, 0, nmemb * size);
 }
 return (array);
 }
