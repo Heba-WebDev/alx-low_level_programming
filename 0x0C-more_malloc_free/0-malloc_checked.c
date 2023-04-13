@@ -1,17 +1,17 @@
-#include <stdlib.h>
-#include "main.h"
+#include<stdlib.h>
+#include"main.h"
 #define EXIT_ALX 98
-/*
-* malloc_checked - allocates memory using malloc
-* @b: number of bytes to allocate in memory
-* Return: a pointer in case of success or 98 otherwise
-*/
+/**
+  *malloc_checked - allocates memory using malloc
+  *@b: size of memory to be allocated
+  *Return: pointer in case of success or 98 otherwise
+  */
+
 void *malloc_checked(unsigned int b)
 {
-void *val = malloc(b);
-if (val == NULL)
-{
+void *ptr = malloc(b);
+
+if (ptr == NULL)
 exit(EXIT_ALX);
-}
-return (val);
+return (ptr);
 }
