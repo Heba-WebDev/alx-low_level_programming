@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "main.h"
+#define EXIT_ALX 98
 /*
 * malloc_checked - allocates memory using malloc
 * @b: number of bytes to allocate in memory
