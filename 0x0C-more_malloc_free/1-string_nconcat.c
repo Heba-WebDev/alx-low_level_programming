@@ -5,9 +5,9 @@
 /**
  * *string_nconcat -  a function that concatenates two strings
  * @s1: first string to concatenate
- * @s2: second string to concatenate 
+ * @s2: second string to concatenate
  * @n: length of the new string
- * Return: pointer to the new string 
+ * Return: pointer to the new string
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
