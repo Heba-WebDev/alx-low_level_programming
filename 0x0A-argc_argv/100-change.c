@@ -2,8 +2,9 @@
 #include <stdlib.h>
 
 /**
- * main - prints the minimum number of coins to make change
- * @argc: the arguments count
+ * main - prints the min number of coins to make change
+ * for an amount of money
+ * @argc: the argument count
  * @argv: the arguments
  * Return: 0
  */
