@@ -10,12 +10,17 @@
  * Return: 0
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 int i;
 int sum = 0;
 int money = atoi(argv[1]);
 int cents[] = {25, 10, 5, 2, 1};
+if (money < 0)
+{
+printf("0\n");
+return (0);
+}
 if (argc == 2)
 {
 for (i = 0; i < 5; i++)
