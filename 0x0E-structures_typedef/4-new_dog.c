@@ -2,16 +2,16 @@
 #include <stdlib.h>
 
 /**
- *_strlen - returns the length of the string
- *@str: the string
- *
- *Return: length of the string
- */
+  * _strlen - returns the length of a string
+  * @str: the pointer to the string
+  *
+  * Return: the string's length
+  */
 
-int _strlen(const char *str)
+int _strlen(char *str)
 {
 int length = 0;
-while (*str++)
+for (; *str != '\0'; str++)
 {
 length++;
 }
@@ -32,7 +32,7 @@ for (i = 0; src[i]; i++)
 {
 dest[i] = src[i];
 }
-dest[i] = '\0';
+dest[i++] = '\0';
 return (dest);
 }
 
