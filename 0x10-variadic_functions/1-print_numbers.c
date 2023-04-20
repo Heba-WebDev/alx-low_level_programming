@@ -11,9 +11,9 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 int i = n - 1;
-if (separator)
-{
 va_list args;
+if (separator != NULL)
+{
 va_start(args, n);
 printf("%d", va_arg(args, int));
 while (i--)
