@@ -10,17 +10,20 @@
 
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-int i = n - 1;
+int i = n;
 va_list args;
-if (separator != NULL)
+if (!separator)
 {
+printf("\n");
+return;
+}
 va_start(args, n);
 printf("%d", va_arg(args, int));
 while (i--)
 {
-printf("%c %d", separator, va_arg(args, int));
+printf("%d%s", va_arg(args, int),
+i ? (separator ? separator : "") : "\n");
 }
 printf("\n");
-}
 va_end(args);
 }
