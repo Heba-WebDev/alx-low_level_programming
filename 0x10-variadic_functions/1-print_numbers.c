@@ -22,4 +22,5 @@ printf("%c %d", separator, va_arg(args, int));
 }
 printf("\n");
 }
+va_end(args);
 }
