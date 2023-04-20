@@ -3,22 +3,22 @@
 /**
  * sum_them_all - a functions that returns the sum of its parameters
  * @n: number of arguments passed to the function
- *
+ * @...: the rest of arguments
  * Return: int (sum
  */
 
 int sum_them_all(const unsigned int n, ...)
 {
-if (n == 0)
+int i = n;
+int sum = 0;
+va_list args;
+if (!n)
 {
 return (0);
 }
-int i;
-int sum = 0;
-va_list args;
 va_start(args, n);
 
-for (i = 0; i < n; i++)
+while (i--)
 {
 sum += va_arg(args, int);
 }
