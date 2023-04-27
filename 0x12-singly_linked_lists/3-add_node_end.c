@@ -2,6 +2,27 @@
 
 
 /**
+ * _strlen - returns the length of a string
+ * @str: the string given
+ *
+ * Return: length of str
+ */
+
+int _strlen(char *str)
+{
+int i = 0;
+if (!str)
+{
+return (0);
+}
+while (*str++)
+{
+i++;
+}
+return (i);
+}
+
+/**
  * add_node_end - adds a node to the end of a list
  * @head: the head of the list
  * @str: the data of the new node
@@ -17,12 +38,16 @@ if (!new_tail || !head)
 {
 return (NULL);
 }
-if (!str)
+if (str)
+{
+new_tail->str = strdup(str);
+if (!new_tail->str)
 {
 free(new_tail);
 return (NULL);
 }
-new_tail->str = strdup(str);
+new_tail->len = _strlen(new_tail->str);
+}
 while (current->next != NULL)
 {
 current = current->next;
