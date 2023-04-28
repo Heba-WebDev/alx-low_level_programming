@@ -1,27 +1,5 @@
 #include "lists.h"
 
-
-/**
- * _strlen - returns the length of a string
- * @str: the string given
- *
- * Return: length of str
- */
-
-int _strlen(char *str)
-{
-int i = 0;
-if (!str)
-{
-return (0);
-}
-while (*str++)
-{
-i++;
-}
-return (i);
-}
-
 /**
  * add_node_end - adds a node to the end of a list
  * @head: the head of the list
@@ -48,7 +26,7 @@ return (NULL);
 }
 new_tail->len = _strlen(new_tail->str);
 }
-if (new_tail)
+if (current)
 {
 while (current->next != NULL)
 {
