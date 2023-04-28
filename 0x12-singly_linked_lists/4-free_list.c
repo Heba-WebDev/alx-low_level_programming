@@ -11,11 +11,11 @@
 
 void free_list(list_t *head)
 {
+list_t *node, *temp;
 if (!head)
 {
-return (NULL);
+return;
 }
-list_t *node, *temp;
 node = head;
 while (node)
 {
