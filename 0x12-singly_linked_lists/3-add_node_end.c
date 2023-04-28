@@ -48,10 +48,17 @@ return (NULL);
 }
 new_tail->len = _strlen(new_tail->str);
 }
+if (new_tail)
+{
 while (current->next != NULL)
 {
 current = current->next;
 }
 current->next = new_tail;
+}
+else
+{
+*head = new_tail;
+}
 return (new_tail);
 }
