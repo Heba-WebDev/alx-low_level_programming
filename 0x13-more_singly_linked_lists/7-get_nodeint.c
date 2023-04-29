@@ -18,7 +18,7 @@ if (!head)
 {
 return (NULL);
 }
-while (node != NULL)
+while (node != NULL && counter <= index)
 {
 if (counter == index)
 {
