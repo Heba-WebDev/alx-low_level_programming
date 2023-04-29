@@ -20,7 +20,7 @@ return (NULL);
 }
 new_node->n = n;
 new_node->next = NULL;
-if(!new_node->n)
+if (!new_node->n)
 {
 free(new_node);
 return (NULL);
