@@ -12,19 +12,13 @@
 
 void free_listint2(listint_t **head)
 {
-listint_t *temp;
-if (*head == NULL)
+listint_t *temp = *head;
+while (temp)
 {
-printf("(nil)\n");
-return;
-}
-while (*head)
-{
-temp = *head;
-*head = (*head)->next;
-free(temp);
-}
+temp = temp->next;
 free(*head);
-*head = NULL;
+*head = temp;
+}
+head = NULL;
 }
 
