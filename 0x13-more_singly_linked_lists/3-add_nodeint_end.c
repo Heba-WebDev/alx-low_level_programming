@@ -16,7 +16,7 @@ listint_t *new_node = malloc(sizeof(listint_t));
 listint_t *current = *head;
 if (!new_node)
 {
-return (0);
+return (NULL);
 }
 new_node->n = n;
 new_node->next = NULL;
@@ -25,15 +25,17 @@ if(!new_node->n)
 free(new_node);
 return (NULL);
 }
-if (!head)
+if (current)
 {
-*head = new_node;
-return (new_node);
-}
 while (current->next)
 {
 current = current->next;
 }
 current->next = new_node;
+}
+else
+{
+*head = new_node;
+}
 return (new_node);
 }
