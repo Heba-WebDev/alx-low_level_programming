@@ -20,6 +20,11 @@ return (0);
 }
 new_node->n = n;
 new_node->next = NULL;
+if(!new_node->n)
+{
+free(new_node);
+return (NULL);
+}
 if (!head)
 {
 *head = new_node;
