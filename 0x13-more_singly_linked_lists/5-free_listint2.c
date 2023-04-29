@@ -16,7 +16,7 @@ listint_t *temp;
 if (*head == NULL)
 {
 printf("(nil)\n");
-return (0);
+return;
 }
 while (*head)
 {
@@ -24,6 +24,7 @@ temp = *head;
 *head = (*head)->next;
 free(temp);
 }
+free(*head);
 *head = NULL;
 }
 
