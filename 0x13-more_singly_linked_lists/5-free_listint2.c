@@ -12,17 +12,13 @@
 
 void free_listint2(listint_t **head)
 {
-listint_t *temp = malloc(sizeof(listint_t));
-if (!temp)
-{
-return;
-}
+listint_t *temp;
 if (*head == NULL)
 {
 printf("(nil)\n");
 return;
 }
-while (*head != NULL)
+while (*head)
 {
 temp = *head;
 *head = (*head)->next;
