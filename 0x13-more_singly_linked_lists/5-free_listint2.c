@@ -16,13 +16,13 @@ listint_t *temp;
 if (!*head)
 {
 printf("(nil)\n");
-return;
+return (NULL);
 }
 while (*head)
 {
-temp = (*head)->next;
-free(*head);
-*head = temp;
+temp = *head;
+*head = (*head)->next;
+free(temp);
 }
 *head = NULL;
 }
