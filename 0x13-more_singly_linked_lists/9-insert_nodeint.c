@@ -1,7 +1,6 @@
 #include "lists.h"
 
 
-
 /**
  * insert_nodeint_at_index - inserts a new node at a given position
  * @head: head of the linked list
@@ -16,21 +15,29 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 int counter = 0;
 listint_t *node = malloc(sizeof(listint_t));
-listint_t *temp = *head;
-if (!node)
+listint_t *temp;
+
+if (listint_len(*head) < idx)
 {
 return (NULL);
 }
-node->next = NULL;
-node->n = n;
-if (!node->n)
+if (!node)
 {
 free(node);
 return (NULL);
 }
+node->next = NULL;
+node->n = n;
+if (!*head)
+{
+*head = node;
+return (node);
+}
 if (idx == 0)
 {
 node->next = temp;
+free(*head);
+temp = node;
 }
 else
 {
