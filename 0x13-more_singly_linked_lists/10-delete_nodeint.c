@@ -6,7 +6,7 @@
  * @head: head of the linked list
  * @index: the index of the node to be deleted
  *
- * Return: (1) if successful, 0 otherwise
+ * Return: (1) if successful, -1 otherwise
  */
 
 
@@ -14,20 +14,34 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 unsigned int counter = 0;
 listint_t *temp = *head;
-listint_t *node;
+listint_t *node = NULL;
+
 if (!head)
 {
-return (0);
+return (-1);
 }
-while (temp && counter <= index)
+
+if (index == 0)
 {
-if (counter == index - 1)
-{
-node = temp->next;
-temp = node->next ? node->next : NULL;
-free(node);
+*head = (*head)->next;
+free(temp);
 return (1);
 }
+
+
+while (counter < index - 1)
+{
+if (!temp || !(temp->next))
+{
+return (-1);
 }
-return (0);
+temp = temp->next;
+counter++;
+}
+
+node = temp->next;
+temp->next = node->next;
+free(node);
+
+return (1);
 }
