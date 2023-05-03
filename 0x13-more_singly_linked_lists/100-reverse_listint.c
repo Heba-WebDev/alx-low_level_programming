@@ -12,7 +12,7 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-listint_t *prev = NULL;
+listint_t *current = NULL;
 listint_t *next = NULL;
 
 if (!head || !*head)
@@ -20,12 +20,14 @@ if (!head || !*head)
 return (NULL);
 }
 
-while (*head)
+current = *head;
+*head = NULL;
+while (current)
 {
-next = (*head)->next;
-prev = *head;
-*head = next;
+next = current->next;
+current->next = *head;
+*head = current;
+current = next;
 }
-*head = prev;
 return (*head);
 }
