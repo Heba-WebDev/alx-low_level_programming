@@ -30,5 +30,6 @@ current->next = *head;
 *head = current;
 current = next;
 }
+*head = current;
 return (*head);
 }
