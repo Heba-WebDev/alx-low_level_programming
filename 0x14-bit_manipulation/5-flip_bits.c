@@ -5,8 +5,8 @@
 /**
  * flip_bits -  the number of bits you would need to flip to get
  *  from one number to another
- *  @n: ing
- *  @m: long
+ *  @n: the number
+ *  @m: the number to flip to
  *
  *  Return: the number of bits
  */
