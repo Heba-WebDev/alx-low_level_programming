@@ -31,6 +31,8 @@ num_written = write(descriptor, text_content, length);
 
 if (num_written == -1 || descriptor == -1)
 return (-1);
+
 close(descriptor);
+
 return (1);
 }
