@@ -14,7 +14,7 @@
 int create_file(const char *filename, char *text_content)
 {
 int descriptor;
-ssize_t num_written;
+int num_written;
 
 if (filename == NULL)
 {
