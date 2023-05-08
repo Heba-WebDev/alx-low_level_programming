@@ -1,122 +1,40 @@
 #include "main.h"
 
-#define BUFFER_SIZE 1024
 
 /**
- * check_args - Check arguments
- * @argc: Number of arguments
- */
-
-void check_args(int argc)
-{
-if (argc != 3)
-{
-dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-exit(97);
-}
-}
-
-/**
- * open_files - Open files
- * @argv: Arguments
- * @file_from: Pointer to file_from
- * @file_to: Pointer to file_to
- */
-
-void open_files(char **argv, int *file_from, int *file_to)
-{
-mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-
-*file_from = open(argv[1], O_RDONLY);
-if (*file_from == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-exit(98);
-}
-
-*file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
-if (*file_to == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-close(*file_from);
-exit(99);
-}
-}
-
-/**
- * copy_file - Copy file
- * @file_from: File from
- * @file_to: File to
- * @argv: Arguments
- */
-
-void copy_file(int file_from, int file_to, char **argv)
-{
-ssize_t bytes_read, bytes_written;
-char buffer[BUFFER_SIZE];
-
-while ((bytes_read = read(file_from, buffer, BUFFER_SIZE)) > 0)
-{
-bytes_written = write(file_to, buffer, bytes_read);
-if (bytes_written == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-close(file_from);
-close(file_to);
-exit(99);
-}
-}
-
-if (bytes_read == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-close(file_from);
-close(file_to);
-exit(98);
-}
-}
-
-/**
- * close_files - Close files
- * @file_from: File from
- * @file_to: File to
- */
-
-void close_files(int file_from, int file_to)
-{
-if (close(file_from) == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-close(file_to);
-exit(100);
-}
-
-if (close(file_to) == -1)
-{
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
-exit(100);
-}
-}
-
-/**
- * main - Entry point
- * @argc: Number of arguments
- * @argv: Arguments
+ * main - program
+ * @ac: argument count
+ * @av: argument vector
  *
- * Return: 0 on success, exit with code otherwise
+ * Return: 1 on success 0 on failure
  */
-
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
-int file_from, file_to;
+	int from_fd = 0, to_fd = 0;
+	ssize_t b;
+	char buf[READ_BUF_SIZE];
 
-check_args(argc);
+	if (ac != 3)
+		dprintf(STDERR_FILENO, USAGE), exit(97);
+	from_fd = open(av[1], O_RDONLY);
+	if (from_fd == -1)
+		dprintf(STDERR_FILENO, ERR_NOREAD, av[1]), exit(98);
+	to_fd = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
+	if (to_fd == -1)
+		dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
 
-open_files(argv, &file_from, &file_to);
+	while ((b = read(from_fd, buf, READ_BUF_SIZE)) > 0)
+		if (write(to_fd, buf, b) != b)
+			dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
+	if (b == -1)
+		dprintf(STDERR_FILENO, ERR_NOREAD, av[1]), exit(98);
 
-copy_file(file_from, file_to, argv);
+	from_fd = close(from_fd);
+	to_fd = close(to_fd);
+	if (from_fd)
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd), exit(100);
+	if (to_fd)
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, from_fd), exit(100);
 
-close_files(file_from, file_to);
-
-return (0);
+	return (EXIT_SUCCESS);
 }
