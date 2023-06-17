@@ -1,27 +1,26 @@
 #include "lists.h"
 
 /**
- * insert_dnodeint_at_index - inserts a new node
- * @h: the head of the linked list
- * @idx: the index at which the new node will be inserted
- * @n: the data stored in the new node
+ * insert_dnodeint_at_index - inserts new node
+ * @h: head of the linked list
+ * @idx: the index at which the node to be inserted
+ * @n: the data value the node will store
  * Return: the new node
  */
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-int count = 0;
-dlistint_t *node = NULL, *current;
+dlistint_t *node = malloc(sizeof(dlistint_t));
+dlistint_t *current;
+unsigned int count = 0;
 
-node = malloc(sizeof(dlistint_t));
-
-if (node == NULL || h == NULL)
+if (h == NULL || node == NULL)
 {
 return (NULL);
 }
 node->n = n;
-node->prev = NULL;
 node->next = NULL;
+node->prev = NULL;
 current = *h;
 
 if (idx == 0)
@@ -29,7 +28,6 @@ if (idx == 0)
 node = add_dnodeint(h, n);
 return (node);
 }
-
 while (current)
 {
 if (current->next == NULL && count == idx - 1)
@@ -37,7 +35,7 @@ if (current->next == NULL && count == idx - 1)
 node = add_dnodeint_end(h, n);
 return (node);
 }
-if (count == idx - 1)
+else if ((idx - 1) == count)
 {
 node->next = current->next;
 node->prev = current;
@@ -48,5 +46,6 @@ return (node);
 count++;
 current = current->next;
 }
+free(node);
 return (NULL);
 }
