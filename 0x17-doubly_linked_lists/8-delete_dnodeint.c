@@ -21,7 +21,11 @@ current = *head;
 
 if (index == 0)
 {
-free(head);
+if (current->next != NULL)
+{
+current->next->prev = NULL;
+}
+free(current);
 return (1);
 }
 
