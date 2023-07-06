@@ -4,6 +4,7 @@
  * hash_table_create - creates a hash table
  * @size: size of the array
  *
+ *
  * Return: hash_table_t (On success) NULL (On failure)
  */
 
