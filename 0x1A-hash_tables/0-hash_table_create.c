@@ -28,6 +28,7 @@ hash->array = malloc(sizeof(hash_node_t *) * size);
 
 if (hash->array == NULL)
 {
+free(hash);
 return (NULL);
 }
 for (i = 0; i < size; i++)
